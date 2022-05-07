@@ -22,7 +22,7 @@ const TabBar = () => {
 };
 
 const styles = StyleSheet.create({
-  TabBar: { backgroundColor: "white", flexDirection: "row", height: 70, justifyContent: 'space-evenly', alignItems: 'center' }
+  TabBar: { backgroundColor: "white", flexDirection: "row", height: 70, justifyContent: 'space-evenly', alignItems: 'center', marginBottom: 10 }
 })
 
 export default TabBar;
