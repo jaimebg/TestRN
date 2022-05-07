@@ -1,15 +1,39 @@
 import React from 'react'
-import { View, Text, useWindowDimensions, ScrollView, TouchableOpacity, Image, RefreshControl, ActionSheetIOS, Platform, Linking } from 'react-native'
+import { View, Text, useWindowDimensions, ScrollView, TouchableOpacity, Image, RefreshControl, ActionSheetIOS, Platform, Linking, Animated, Easing } from 'react-native'
 import * as RootNavigation from '../navigation/RootNavigation'
+import Timeline from 'react-native-timeline-flatlist'
+import LottieView from 'lottie-react-native';
 
 const OrderDetailsScreen = () => {
   const { width, height } = useWindowDimensions()
   const [refreshing, setRefreshing] = React.useState(false)
+  const [expandableHeight, setExpandableHeight] = React.useState(new Animated.Value(115))
+  const [isExpanded, setIsExpanded] = React.useState(false)
+
+  const timelineData = [{ title: 'Pedido confirmado' }, { title: 'Asignando repartidor' }, { title: 'El repartido está avisado' }, { title: 'El reparidor está en el restaurante' }, { title: 'En camino' }, { title: 'El driver está cerca' }, { title: 'Disfruta de tu comida' }]
+
+  animateExpand = () => {
+    Animated.timing(expandableHeight, {
+      toValue: 50 * timelineData.length,
+      duration: 500,
+      useNativeDriver: false,
+      easing: Easing.elastic(0.8)
+    }).start()
+  }
+
+  animateColapse = () => {
+    Animated.timing(expandableHeight, {
+      toValue: 115,
+      duration: 500,
+      useNativeDriver: false,
+      easing: Easing.elastic(0.8)
+    }).start()
+  }
 
   return (
     <>
       <View style={{ position: 'relative', top: 0, height: 80, backgroundColor: '#b5d1d6', marginBottom: -55 }} />
-      <ScrollView refreshControl={<RefreshControl tintColor={'black'} refreshing={refreshing} />} style={{ flex: 1, backgroundColor: 'white', marginTop: 45 }}>
+      <ScrollView refreshControl={<RefreshControl tintColor={'black'} refreshing={refreshing} />} style={{ flex: 1, backgroundColor: 'white', marginTop: 50 }}>
         <View style={{ height: 240, backgroundColor: '#b5d1d6', borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}>
           <View style={{ height: 80, backgroundColor: 'white', borderRadius: 10, margin: 10, flexDirection: 'row', padding: 15 }}>
             <View>
@@ -20,9 +44,32 @@ const OrderDetailsScreen = () => {
               <Image style={{ height: 35, width: 35, marginTop: 10, marginLeft: 10, marginRight: 20, alignSelf: 'center' }} source={require('../../assets/logo.png')} />
             </View>
           </View>
-          <View style={{ height: 115, backgroundColor: 'white', borderRadius: 10, margin: 10 }}>
-
-          </View>
+          <Animated.View style={{ shadowColor: 'gray', height: expandableHeight, backgroundColor: 'white', borderRadius: 10, margin: 10, padding: 15 }}>
+            <View style={{ flexDirection: 'row' }}>
+              <View style={{ marginLeft: 8, width: 35, marginTop: 10 }}>
+                <LottieView source={require('../../assets/pointer.json')} autoPlay loop style={{ height: 25, width: 25 }} />
+                <View style={{ borderLeftColor: '#69696920', borderLeftWidth: 2, flex: 1, marginLeft: 12, marginBottom: -20, marginTop: -8 }} />
+              </View>
+              <View style={{ width: width * 0.7 }}>
+                <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 20, marginTop: 5 }}>Pedido recibido</Text>
+                <Text style={{ color: 'black', marginTop: 10 }}>El restaurante confirmará tu pedido justo después de las 12:00</Text>
+              </View>
+            </View>
+            <Timeline
+              style={{ marginTop: 20 }}
+              circleSize={4}
+              circleColor='#696969'
+              lineColor='#69696920'
+              showTime={false}
+              data={timelineData}
+              titleStyle={{ fontSize: 14, color: 'gray', marginTop: -13, marginBottom: 15 }}
+            />
+            {isExpanded ? <TouchableOpacity onPress={() => { animateColapse(); setIsExpanded(false) }} style={{ width: 40, height: 40, position: 'absolute', top: 0, right: 0, borderRadius: 50, backgroundColor: '#69696920', justifyContent: 'center', marginTop: 10, marginRight: 12 }}>
+              <Image source={require('../../assets/expand_less.png')} style={{ width: 35, height: 35, alignSelf: 'center' }} />
+            </TouchableOpacity> : <TouchableOpacity onPress={() => { animateExpand(); setIsExpanded(true) }} style={{ width: 40, height: 40, position: 'absolute', top: 0, right: 0, borderRadius: 50, backgroundColor: '#69696920', justifyContent: 'center', marginTop: 10, marginRight: 12 }}>
+              <Image source={require('../../assets/expand_more.png')} style={{ width: 35, height: 35, alignSelf: 'center' }} />
+            </TouchableOpacity>}
+          </Animated.View>
         </View>
         <View style={{ margin: 16 }}>
           <View style={{ marginTop: 20, flexDirection: 'row' }}>
