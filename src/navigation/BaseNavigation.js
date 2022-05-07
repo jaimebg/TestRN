@@ -7,6 +7,7 @@ import ShopsScreen from '../screens/ShopsScreen';
 import OrdersScreen from '../screens/OrdersScreen';
 import AccountScreen from '../screens/AccountScreen';
 import MainTabContainer from '../screens/MainTabContainer';
+import OrderDetailsScreen from '../screens/OrderDetailsScreen';
 
 const BaseNavigation = () => {
   const Stack = createNativeStackNavigator();
@@ -19,6 +20,7 @@ const BaseNavigation = () => {
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Shops" component={ShopsScreen} />
           <Stack.Screen name="Orders" component={OrdersScreen} />
+          <Stack.Screen name="OrderDetails" component={OrderDetailsScreen} options={{ animation: 'slide_from_bottom' }} />
           <Stack.Screen name="Account" component={AccountScreen} />
         </Stack.Group>
         <Stack.Group>
