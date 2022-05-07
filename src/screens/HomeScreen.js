@@ -5,7 +5,7 @@ import * as RootNavigation from '../navigation/RootNavigation'
 const HomeScreen = () => {
   return (
     <View style={{ flex: 1, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{ fontSize: 14, color: 'black', textAlign: 'center' }}>Home</Text>
+      <Text style={{ fontSize: 14, color: 'black', textAlign: 'center', fontFamily: 'Taro-Regular' }}>Home</Text>
     </View>
   )
 }

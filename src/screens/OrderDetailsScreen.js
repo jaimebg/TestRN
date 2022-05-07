@@ -37,8 +37,8 @@ const OrderDetailsScreen = () => {
         <View style={{ height: 240, backgroundColor: '#b5d1d6', borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}>
           <View style={{ shadowColor: 'black', shadowOpacity: 0.15, elevation: 5, height: 80, backgroundColor: 'white', borderRadius: 10, margin: 10, flexDirection: 'row', padding: 15 }}>
             <View>
-              <Text style={{ color: 'black' }}>Te gustaría que el reparto fuera a las</Text>
-              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 22, marginTop: 5 }}>12:45</Text>
+              <Text style={{ color: 'black', fontFamily: 'Taro-Regular' }}>Te gustaría que el reparto fuera a las</Text>
+              <Text style={{ color: 'black', fontSize: 22, marginTop: 5, fontFamily: 'Taro-Bold' }}>12:45</Text>
             </View>
             <View style={{ width: width / 3 }}>
               <Image style={{ height: 35, width: 35, marginTop: 10, marginLeft: 10, marginRight: 20, alignSelf: 'center' }} source={require('../../assets/logo.png')} />
@@ -51,8 +51,8 @@ const OrderDetailsScreen = () => {
                 <View style={{ borderLeftColor: '#69696920', borderLeftWidth: 2, flex: 1, marginLeft: 12, marginBottom: -20, marginTop: -8 }} />
               </View>
               <View style={{ width: width * 0.7 }}>
-                <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 20, marginTop: 5 }}>Pedido recibido</Text>
-                <Text style={{ color: 'black', marginTop: 10 }}>El restaurante confirmará tu pedido justo después de las 12:00</Text>
+                <Text style={{ fontFamily: 'Taro-Bold', color: 'black', fontSize: 20, marginTop: 5 }}>Pedido recibido</Text>
+                <Text style={{ fontFamily: 'Taro-Regular', color: 'black', marginTop: 10 }}>El restaurante confirmará tu pedido justo después de las 12:00</Text>
               </View>
             </View>
             <Timeline
@@ -62,7 +62,7 @@ const OrderDetailsScreen = () => {
               lineColor='#69696920'
               showTime={false}
               data={timelineData}
-              titleStyle={{ fontSize: 14, color: 'gray', marginTop: -13, marginBottom: 15 }}
+              titleStyle={{ fontFamily: 'Taro-Regular', fontSize: 14, color: 'gray', marginTop: -13, marginBottom: 15 }}
             />
             {isExpanded ? <TouchableOpacity onPress={() => { animateColapse(); setIsExpanded(false) }} style={{ width: 40, height: 40, position: 'absolute', top: 0, right: 0, borderRadius: 50, backgroundColor: '#69696920', justifyContent: 'center', marginTop: 10, marginRight: 12 }}>
               <Image source={require('../../assets/expand_less.png')} style={{ width: 35, height: 35, alignSelf: 'center' }} />
@@ -77,54 +77,54 @@ const OrderDetailsScreen = () => {
               <Image style={{ height: 35, width: 35, marginTop: 10, marginLeft: 10, marginRight: 20 }} source={require('../../assets/fruits.png')} />
             </View>
             <View style={{ width: width - 100 }}>
-              <Text style={{ fontWeight: 'bold', color: 'black' }}>Frutería Minimarket Torres</Text>
-              <Text style={{ color: 'black' }}>Calle Párroco Francisco Rodríguez Rodríguez, 27, Las Palmas de Gran Canaria, 35010</Text>
-              <Text style={{ fontWeight: 'bold', color: 'black', textDecorationStyle: 'solid', textDecorationColor: 'black', textDecorationLine: 'underline', marginTop: 8 }}>Ver menú</Text>
+              <Text style={{ fontFamily: 'Taro-Bold', color: 'black' }}>Frutería Minimarket Torres</Text>
+              <Text style={{ color: 'black', fontFamily: 'Taro-Regular' }}>Calle Párroco Francisco Rodríguez Rodríguez, 27, Las Palmas de Gran Canaria, 35010</Text>
+              <Text style={{ fontFamily: 'Taro-Bold', color: 'black', textDecorationStyle: 'solid', textDecorationColor: 'black', textDecorationLine: 'underline', marginTop: 8 }}>Ver menú</Text>
             </View>
           </View>
           <View style={{ marginTop: 20 }}>
-            <Text style={{ fontWeight: 'bold', color: 'black' }}>Entrega en:</Text>
-            <Text style={{ color: 'black', marginTop: 5 }}>Calle Blasco Ibañez, 3, 3°B, Las Palmas de Gran Canaria, 35006</Text>
+            <Text style={{ fontFamily: 'Taro-Bold', color: 'black' }}>Entrega en:</Text>
+            <Text style={{ fontFamily: 'Taro-Regular', color: 'black', marginTop: 5 }}>Calle Blasco Ibañez, 3, 3°B, Las Palmas de Gran Canaria, 35006</Text>
           </View>
           <View style={{ marginTop: 20 }}>
-            <Text style={{ fontWeight: 'bold', color: 'black' }}>Nota para el restaurante</Text>
-            <Text style={{ color: 'black', marginTop: 5 }}>Entrega sin contacto.</Text>
+            <Text style={{ fontFamily: 'Taro-Bold', color: 'black' }}>Nota para el restaurante</Text>
+            <Text style={{ fontFamily: 'Taro-Regular', color: 'black', marginTop: 5 }}>Entrega sin contacto.</Text>
           </View>
           <View style={{ marginTop: 35 }}>
-            <Text style={{ fontWeight: 'bold', color: 'black' }}>Your receipt</Text>
-            <Text style={{ color: 'black', marginTop: 5 }}>N.° de pedido  106831882</Text>
-            <View style={{ flexDirection: 'row', marginTop: 10 }}>
-              <Text style={{ color: 'black', width: (width * 0.8) - 16 }}>Naranja Mesa, 1Kl Aprox</Text>
-              <Text style={{ color: 'black', width: (width * 0.2) - 16, textAlign: 'right' }}>1,60 €</Text>
+            <Text style={{ fontFamily: 'Taro-Bold', color: 'black' }}>Your receipt</Text>
+            <Text style={{ fontFamily: 'Taro-Regular', color: 'black', marginTop: 5 }}>N.° de pedido  106831882</Text>
+            <View style={{ fontFamily: 'Taro-Regular', flexDirection: 'row', marginTop: 10 }}>
+              <Text style={{ fontFamily: 'Taro-Regular', color: 'black', width: (width * 0.8) - 16 }}>Naranja Mesa, 1Kl Aprox</Text>
+              <Text style={{ fontFamily: 'Taro-Regular', color: 'black', width: (width * 0.2) - 16, textAlign: 'right' }}>1,60 €</Text>
             </View>
             <View style={{ flexDirection: 'row', marginTop: 10 }}>
-              <Text style={{ color: 'black', width: (width * 0.8) - 16 }}>2 x Calabacín, 1Kl Aprox</Text>
-              <Text style={{ color: 'black', width: (width * 0.2) - 16, textAlign: 'right' }}>3,80 €</Text>
+              <Text style={{ fontFamily: 'Taro-Regular', color: 'black', width: (width * 0.8) - 16 }}>2 x Calabacín, 1Kl Aprox</Text>
+              <Text style={{ fontFamily: 'Taro-Regular', color: 'black', width: (width * 0.2) - 16, textAlign: 'right' }}>3,80 €</Text>
             </View>
             <View style={{ flexDirection: 'row', marginTop: 10 }}>
-              <Text style={{ color: 'black', width: (width * 0.8) - 16 }}>2 x Batata Blanca Lanzarote, 1Kl Aprox</Text>
-              <Text style={{ color: 'black', width: (width * 0.2) - 16, textAlign: 'right' }}>4,80 €</Text>
+              <Text style={{ fontFamily: 'Taro-Regular', color: 'black', width: (width * 0.8) - 16 }}>2 x Batata Blanca Lanzarote, 1Kl Aprox</Text>
+              <Text style={{ fontFamily: 'Taro-Regular', color: 'black', width: (width * 0.2) - 16, textAlign: 'right' }}>4,80 €</Text>
             </View>
           </View>
           <View style={{ opacity: 0.5, borderBottomColor: 'gray', borderBottomWidth: 1, marginTop: 10 }} />
           <View style={{ flexDirection: 'row', marginTop: 10 }}>
-            <Text style={{ color: 'black', width: (width * 0.8) - 16 }}>Subtotal</Text>
-            <Text style={{ color: 'black', width: (width * 0.2) - 16, textAlign: 'right' }}>10,20 €</Text>
+            <Text style={{ fontFamily: 'Taro-Regular', color: 'black', width: (width * 0.8) - 16 }}>Subtotal</Text>
+            <Text style={{ fontFamily: 'Taro-Regular', color: 'black', width: (width * 0.2) - 16, textAlign: 'right' }}>10,20 €</Text>
           </View>
           <View style={{ flexDirection: 'row', marginTop: 5 }}>
-            <Text style={{ color: 'black', width: (width * 0.8) - 16 }}>Gastos de entrega</Text>
-            <Text style={{ color: 'black', width: (width * 0.2) - 16, textAlign: 'right' }}>6,00 €</Text>
+            <Text style={{ fontFamily: 'Taro-Regular', color: 'black', width: (width * 0.8) - 16 }}>Gastos de entrega</Text>
+            <Text style={{ fontFamily: 'Taro-Regular', color: 'black', width: (width * 0.2) - 16, textAlign: 'right' }}>6,00 €</Text>
           </View>
           <View style={{ opacity: 0.5, borderBottomColor: 'gray', borderBottomWidth: 1, marginTop: 10 }} />
           <View style={{ flexDirection: 'row', marginTop: 10 }}>
-            <Text style={{ color: 'black', width: (width * 0.8) - 16 }}>Total</Text>
-            <Text style={{ color: 'black', width: (width * 0.2) - 16, textAlign: 'right' }}>16,20 €</Text>
+            <Text style={{ fontFamily: 'Taro-Regular', color: 'black', width: (width * 0.8) - 16 }}>Total</Text>
+            <Text style={{ fontFamily: 'Taro-Regular', color: 'black', width: (width * 0.2) - 16, textAlign: 'right' }}>16,20 €</Text>
           </View>
           <View style={{ opacity: 0.5, borderBottomColor: 'gray', borderBottomWidth: 1, marginTop: 10 }} />
-          <Text style={{ color: 'black', marginTop: 10 }}>Pagado por:</Text>
+          <Text style={{ fontFamily: 'Taro-Regular', color: 'black', marginTop: 10 }}>Pagado por:</Text>
           <View style={{ flexDirection: 'row', marginTop: 5 }}>
-            <Text style={{ color: 'black', width: (width * 0.8) - 16 }}>VISA</Text>
-            <Text style={{ color: 'black', width: (width * 0.2) - 16, textAlign: 'right' }}>16,20 €</Text>
+            <Text style={{ fontFamily: 'Taro-Regular', color: 'black', width: (width * 0.8) - 16 }}>VISA</Text>
+            <Text style={{ fontFamily: 'Taro-Regular', color: 'black', width: (width * 0.2) - 16, textAlign: 'right' }}>16,20 €</Text>
           </View>
           <TouchableOpacity onPress={() => (Platform.OS === 'ios' ? ActionSheetIOS.showActionSheetWithOptions(
             {
@@ -143,7 +143,7 @@ const OrderDetailsScreen = () => {
               }
             }
           ) : Linking.openURL('https://www.just-eat.es/'))} style={{ backgroundColor: '#87CEEB40', width: width - 32, borderRadius: 10, height: 45, justifyContent: 'center', marginTop: 10 }}>
-            <Text style={{ fontWeight: 'bold', color: 'black', marginLeft: 15 }}>¿Podemos ayudarte con algo?</Text>
+            <Text style={{ fontFamily: 'Taro-Bold', color: 'black', marginLeft: 15 }}>¿Podemos ayudarte con algo?</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

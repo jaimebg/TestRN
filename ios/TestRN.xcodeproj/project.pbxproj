@@ -15,6 +15,8 @@
 		3FA211FB28267F84002DA11E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FA211FA28267F84002DA11E /* GoogleService-Info.plist */; };
 		44ECB6186BD3765BD9A9AE18 /* libPods-TestRN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 730A1BF20BC64BD7A875B711 /* libPods-TestRN.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		79CAEE04A9334A04A9454665 /* Taro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77C27A897A3D45A29584518C /* Taro-Bold.otf */; };
+		4EF7194035094861BB620ABE /* Taro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F251E6CF33AD46BB9C68E2F2 /* Taro-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		C048945C8FECADF0D4AC339B /* libPods-TestRN-TestRNTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestRN-TestRNTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6A16A63082969EA34D40D71 /* Pods-TestRN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestRN.release.xcconfig"; path = "Target Support Files/Pods-TestRN/Pods-TestRN.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		77C27A897A3D45A29584518C /* Taro-Bold.otf */ = {isa = PBXFileReference; name = "Taro-Bold.otf"; path = "../assets/fonts/Taro-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F251E6CF33AD46BB9C68E2F2 /* Taro-Regular.otf */ = {isa = PBXFileReference; name = "Taro-Regular.otf"; path = "../assets/fonts/Taro-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				EAA7540D33EA7426C53DD489 /* Pods */,
+				DA38B8CBBE3E492BB5B8ADFF /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -152,6 +157,16 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		DA38B8CBBE3E492BB5B8ADFF /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				77C27A897A3D45A29584518C /* Taro-Bold.otf */,
+				F251E6CF33AD46BB9C68E2F2 /* Taro-Regular.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -251,6 +266,8 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3FA211FB28267F84002DA11E /* GoogleService-Info.plist in Resources */,
+				79CAEE04A9334A04A9454665 /* Taro-Bold.otf in Resources */,
+				4EF7194035094861BB620ABE /* Taro-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
