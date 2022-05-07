@@ -6,12 +6,38 @@ import AccountScreen from './AccountScreen';
 import HomeScreen from './HomeScreen';
 import OrdersScreen from './OrdersScreen';
 import ShopsScreen from './ShopsScreen';
+import messaging from '@react-native-firebase/messaging';
+import * as RootNavigation from '../navigation/RootNavigation'
 
 const MainTabContainer = () => {
   const TabStack = createNativeStackNavigator();
 
   useEffect(() => {
-    // 
+    async function requestUserPermission() {
+      const authorizationStatus = await messaging().requestPermission();
+
+      if (authorizationStatus) {
+        console.log('Permission status:', authorizationStatus);
+      }
+    }
+
+    async function initialNotif() {
+      messaging().onNotificationOpenedApp(remoteMessage => {
+        if (remoteMessage) {
+          if (remoteMessage.notification.body.startsWith('Pedido')) RootNavigation.navigate('OrderDetails');
+        }
+      });
+
+      messaging()
+        .getInitialNotification()
+        .then(async (remoteMessage) => {
+          if (remoteMessage) {
+            if (remoteMessage.notification.body.startsWith('Pedido')) RootNavigation.navigate('OrderDetails');
+          }
+        });
+    }
+    requestUserPermission()
+    initialNotif()
   }, [])
 
   return (
