@@ -14,7 +14,7 @@ const OrderDetailsScreen = () => {
 
   animateExpand = () => {
     Animated.timing(expandableHeight, {
-      toValue: 50 * timelineData.length,
+      toValue: 58 * timelineData.length,
       duration: 500,
       useNativeDriver: false,
       easing: Easing.elastic(0.8)
@@ -35,7 +35,7 @@ const OrderDetailsScreen = () => {
       <View style={{ position: 'relative', top: 0, height: 80, backgroundColor: '#b5d1d6', marginBottom: -55 }} />
       <ScrollView refreshControl={<RefreshControl tintColor={'black'} refreshing={refreshing} />} style={{ flex: 1, backgroundColor: 'white', marginTop: 50 }}>
         <View style={{ height: 240, backgroundColor: '#b5d1d6', borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}>
-          <View style={{ height: 80, backgroundColor: 'white', borderRadius: 10, margin: 10, flexDirection: 'row', padding: 15 }}>
+          <View style={{ shadowColor: 'black', shadowOpacity: 0.15, elevation: 5, height: 80, backgroundColor: 'white', borderRadius: 10, margin: 10, flexDirection: 'row', padding: 15 }}>
             <View>
               <Text style={{ color: 'black' }}>Te gustaría que el reparto fuera a las</Text>
               <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 22, marginTop: 5 }}>12:45</Text>
@@ -44,7 +44,7 @@ const OrderDetailsScreen = () => {
               <Image style={{ height: 35, width: 35, marginTop: 10, marginLeft: 10, marginRight: 20, alignSelf: 'center' }} source={require('../../assets/logo.png')} />
             </View>
           </View>
-          <Animated.View style={{ shadowColor: 'gray', height: expandableHeight, backgroundColor: 'white', borderRadius: 10, margin: 10, padding: 15 }}>
+          <Animated.View style={{ shadowColor: 'black', shadowOpacity: 0.15, shadowRadius: 8, elevation: 5, height: expandableHeight, backgroundColor: 'white', borderRadius: 10, margin: 10, padding: 15 }}>
             <View style={{ flexDirection: 'row' }}>
               <View style={{ marginLeft: 8, width: 35, marginTop: 10 }}>
                 <LottieView source={require('../../assets/pointer.json')} autoPlay loop style={{ height: 25, width: 25 }} />
@@ -71,7 +71,7 @@ const OrderDetailsScreen = () => {
             </TouchableOpacity>}
           </Animated.View>
         </View>
-        <View style={{ margin: 16 }}>
+        <View style={{ zIndex: -1, elevation: -1, margin: 16 }}>
           <View style={{ marginTop: 20, flexDirection: 'row' }}>
             <View style={{ width: width - (width - 70) }}>
               <Image style={{ height: 35, width: 35, marginTop: 10, marginLeft: 10, marginRight: 20 }} source={require('../../assets/fruits.png')} />
